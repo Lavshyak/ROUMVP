@@ -51,7 +51,7 @@ public class ExampleController : ControllerBase
         public string Str { get; set; }
     }
     
-    //OK. returns json. json in headers, json in body (serialized int)
+    //OK. returns json. json in headers, json in body (serialized SomeModel)
     [HttpGet]
     public ResultOrUnprocessable<SomeModel, SomeErrors> GetSomeModelCustom()
     {
