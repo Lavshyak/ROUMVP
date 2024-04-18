@@ -14,7 +14,7 @@ services.AddControllers(options =>
 {
     options.OutputFormatters.RemoveType<StringOutputFormatter>();
     options.OutputFormatters.Insert(0, new ResultOrUnprocessableOutputFormatter());
-
+    options.Filters.Insert(0, new ResultOrUnprocessableFilter());
 });
 
 if (environment.IsDevelopment())

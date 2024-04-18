@@ -24,7 +24,9 @@ public class ExampleController : ControllerBase
         B
     }
     
-    //Incorrect. returns json. json in headers, json in body (serialized FileResult)
+    
+    //Old: Incorrect. returns json. json in headers, json in body (serialized FileResult)
+    //Fixed now: Ok. returns normal file. octet-stream in headers, raw bytes in body./
     [HttpGet]
     public ResultOrUnprocessable<FileResult, SomeErrors> GetFileCustom()
     {
