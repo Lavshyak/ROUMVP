@@ -37,4 +37,24 @@ public class ExampleController : ControllerBase
     {
         return SomeErrors.A;
     }
+    
+    //OK. returns json. json in headers, json in body (serialized int)
+    [HttpGet]
+    public ResultOrUnprocessable<int, SomeErrors> GetIntCustom()
+    {
+        return 4;
+    }
+
+    public class SomeModel
+    {
+        public int Id { get; set; }
+        public string Str { get; set; }
+    }
+    
+    //OK. returns json. json in headers, json in body (serialized int)
+    [HttpGet]
+    public ResultOrUnprocessable<SomeModel, SomeErrors> GetSomeModelCustom()
+    {
+        return new SomeModel(){Id = 5, Str = "xdstr"};
+    }
 }
